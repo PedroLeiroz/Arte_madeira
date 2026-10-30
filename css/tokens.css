@@ -1,0 +1,47 @@
+/* Layout: a oficina como interface. Fundo de compensado de bétula (claro) ou de nogueira (escuro) com veio sutil;
+   "mesas de máquina" escuras onde a usinagem acontece; cortes tracejados com cotas separando as seções.
+   Cores: madeira clara/nogueira, tinta de nogueira, dourado TiN das fresas (marca), verde oficina para ação.
+   Tipo: Big Shoulders Display (letreiro de oficina, títulos), Bricolage Grotesque (texto), JetBrains Mono (cotas e G-code).
+   Archivo continua só na logomarca e nas gravações, para preservar a marca. */
+:root{
+  --bg:#E8DCC8;            /* compensado de bétula */
+  --surface:#F4ECDF;       /* lixado, mais claro */
+  --surface-2:#DDCDB4;     /* faixa de destaque */
+  --ink:#2B1D14;           /* nogueira */
+  --muted:#6B5646;
+  --line:#CDB99C;
+  --accent:#9A6A0E;        /* dourado TiN, escurecido para contraste no claro */
+  --accent-ink:#7A510A;
+  --hl:rgba(212,160,52,.42);   /* marca-texto de carpinteiro */
+  --go:#2F5D45; --on-go:#F4ECDF;
+  --wood:#6B4423; --on-wood:#F3E6D2;
+  --bed:#1E1813; --bed-2:#272019; --bed-line:#3A3027; --on-bed:#EADFCF; --on-bed-muted:#A8988A;
+  --cad:#7DB4DA; --tin:#E0B356;
+  --shadow:0 24px 40px -28px rgba(60,35,15,.55);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .09' numOctaves='3' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .27 0 0 0 0 .14 0 0 0 .13 -.03'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23g)'/%3E%3C/svg%3E");
+
+  --display:"Big Shoulders Display","Archivo Narrow","Arial Narrow",system-ui,sans-serif;
+  --f:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --brand:"Archivo",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+
+  --step--1:14px; --step-0:16.5px; --step-1:clamp(17.5px,1.7vw,20px); --step-2:clamp(22px,2.2vw,28px);
+  --step-3:clamp(34px,4.2vw,52px); --step-4:clamp(44px,6.4vw,84px); --step-5:clamp(54px,9vw,128px);
+
+  --ease:cubic-bezier(.7,0,.2,1); --spring:cubic-bezier(.2,.9,.2,1);
+  --r:4px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17110D; --surface:#211913; --surface-2:#2C2219; --ink:#F1E6D6; --muted:#B4A08C; --line:#3E3026;
+  --accent:#E0B356; --accent-ink:#EBC777; --hl:rgba(224,179,86,.30); --go:#86B99C; --on-go:#13201A;
+  --bed:#0F0B08; --bed-2:#18120E; --bed-line:#33281F;
+  --shadow:0 24px 40px -24px rgba(0,0,0,.8);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .09' numOctaves='3' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .78 0 0 0 0 .55 0 0 0 0 .32 0 0 0 .06 -.02'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23g)'/%3E%3C/svg%3E");
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17110D; --surface:#211913; --surface-2:#2C2219; --ink:#F1E6D6; --muted:#B4A08C; --line:#3E3026;
+  --accent:#E0B356; --accent-ink:#EBC777; --hl:rgba(224,179,86,.30); --go:#86B99C; --on-go:#13201A;
+  --bed:#0F0B08; --bed-2:#18120E; --bed-line:#33281F;
+  --shadow:0 24px 40px -24px rgba(0,0,0,.8);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .09' numOctaves='3' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .78 0 0 0 0 .55 0 0 0 0 .32 0 0 0 .06 -.02'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23g)'/%3E%3C/svg%3E");
+  color-scheme:dark}
